@@ -7,7 +7,7 @@ def get_encabezado(ruta_archivo):
     return array_encabezado
 
 
-def get_valores(ruta_archivo):
+def get_personajes(ruta_archivo):
     archivo = open(ruta_archivo, mode="r")
     lineas = archivo.readlines()
     archivo.close()
@@ -18,6 +18,18 @@ def get_valores(ruta_archivo):
         lista_personajes.append(personaje)
     del lista_personajes[0]
     return lista_personajes
+
+
+def imprimir_personajes(lista):
+    for index, personaje in enumerate(lista):
+        print(index," ", personaje["tipo"])
+
+lista = get_personajes("personajes.txt")
+print("Seleccione uno de los siguientes personajes:")
+imprimir_personajes(lista)
+
+posicion_seleccionada = int(input("Personaje: "))
+print(lista[posicion_seleccionada])
 
 
 
