@@ -72,8 +72,8 @@ UNI_ID
 create table CITY (
    ID                   SERIAL               not null,
    NAME                 VARCHAR(200)         null,
-   LAT                  NUMERIC(4,8)         null,
-   LON                  NUMERIC(4,8)         null,
+   LAT                  FLOAT        null,
+   LON                  FLOAT        null,
    constraint PK_CITY primary key (ID)
 );
 
