@@ -22,7 +22,29 @@ class DataBase:
             raise
 
 
-bd = DataBase()
-lista = bd.lista_personajes()
+    def insertar_poderes(self, poder):
+        sql = f"INSERT INTO powers(name) VALUES ( '{poder}');\n "
+        try:
+            self.cursor.execute(sql)
+            self.connection.commit()
+        except Exception as e:
+            raise
 
-print(lista)
+
+
+
+
+poderes = ['Volar',
+           'Invisibilidad',
+           'Súper fuerza',
+           ' Manipulación del fuego',
+           'Súper velocidad',
+           'Telepatía',
+           'Creaciones de luz',
+           'Invulnerabilidad',
+           'Telequinesis',
+           'Cambiar de forma']
+
+bd = DataBase()
+for poder in poderes:
+    bd.insertar_poderes(poder)
