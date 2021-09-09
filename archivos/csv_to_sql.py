@@ -39,6 +39,10 @@ def get_data(ruta_archivo):
     return lista
 
 
+def casos_prueba(lista):
+    print(lista)
+
+
 def print1(lista):
     f = open("c:/Users/iv886/Desktop/proyectos/saces/insert.sql", "w")
     for index, data in enumerate(lista):
@@ -53,7 +57,7 @@ def isNone(valor):
 
 
 lista = get_data(path)
-print1(lista)
+casos_prueba(lista)
 
 
 
